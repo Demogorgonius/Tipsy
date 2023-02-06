@@ -9,10 +9,15 @@ import Foundation
 import UIKit
 
 struct ButtonsProperty {
-    let buttonFrame: CGRect = CGRect(x: 0, y: 0, width: 374, height: 80)
-    let buttonFont: UIFont = UIFont.systemFont(ofSize: 25.0, weight: .regular)
-    let calcButtonColor: UIColor = #colorLiteral(red: 0.3843137255, green: 0.3764705882, blue: 0.6156862745, alpha: 1)
-    let calcButtonTextColor: UIColor = .white
-    let reCalcButtonColor: UIColor = .white
-    let reCalcButtonTextColor: UIColor = #colorLiteral(red: 0.3843137255, green: 0.3764705882, blue: 0.6156862745, alpha: 1)
+    let calcButtonFrame: CGRect = CGRect(x: 0, y: 0, width: 374, height: 80)
+    let calcButtonFont: UIFont = UIFont.systemFont(ofSize: 35.0, weight: .regular)
+    let calcButtonColor: UIColor = #colorLiteral(red: 0, green: 0.6901960784, blue: 0.4196078431, alpha: 1)
+    let calcButtonTextColor: UIColor = #colorLiteral(red: 0.9725490196, green: 1, blue: 0.9921568627, alpha: 1)
+    
+    let percentButtonFrame: CGRect = CGRect(x: 0, y: 0, width: 101, height: 54)
+    let percentButtonFont: UIFont = UIFont.systemFont(ofSize: 35.0, weight: .regular)
+    let percentButtonSelectedColor: UIColor = #colorLiteral(red: 0, green: 0.6901960784, blue: 0.4196078431, alpha: 1)
+    let percentButtonNotSelectedColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+    let percentButtonTextSelectedColor: UIColor = #colorLiteral(red: 0.9725490196, green: 1, blue: 0.9921568627, alpha: 1)
+    let percentButtonTextNotSelectedColor: UIColor = #colorLiteral(red: 0, green: 0.6901960784, blue: 0.4196078431, alpha: 1)
 }
