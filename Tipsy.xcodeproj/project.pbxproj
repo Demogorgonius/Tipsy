@@ -19,6 +19,8 @@
 		A511A0F029900C76008B83CF /* ButtonsProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A511A0EF29900C76008B83CF /* ButtonsProperty.swift */; };
 		A511A0F229900C8E008B83CF /* LabelsProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = A511A0F129900C8E008B83CF /* LabelsProperty.swift */; };
 		A511A0F429900F60008B83CF /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A511A0F329900F60008B83CF /* ResultViewController.swift */; };
+		A580F62329923C9700F8E10E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A580F62229923C9700F8E10E /* Result.swift */; };
+		A580F62529923D0D00F8E10E /* TipsyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A580F62429923D0D00F8E10E /* TipsyController.swift */; };
 		CD1AFB8F288F4FC402D157DB /* Pods_Tipsy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF337E259E5869AB8946196 /* Pods_Tipsy.framework */; };
 		D2EF70EB634FA56900E402B7 /* Pods_TipsyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C46D0182788D57B2A1E3F7B /* Pods_TipsyTests.framework */; };
 		E4AA55C7429304EF20506E2D /* Pods_Tipsy_TipsyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603B921CD3624AF9A0E22F9D /* Pods_Tipsy_TipsyUITests.framework */; };
@@ -65,6 +67,8 @@
 		A511A0EF29900C76008B83CF /* ButtonsProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsProperty.swift; sourceTree = "<group>"; };
 		A511A0F129900C8E008B83CF /* LabelsProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsProperty.swift; sourceTree = "<group>"; };
 		A511A0F329900F60008B83CF /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		A580F62229923C9700F8E10E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A580F62429923D0D00F8E10E /* TipsyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsyController.swift; sourceTree = "<group>"; };
 		EC24F6622885F3994D50D352 /* Pods-Tipsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tipsy.debug.xcconfig"; path = "Target Support Files/Pods-Tipsy/Pods-Tipsy.debug.xcconfig"; sourceTree = "<group>"; };
 		FEF337E259E5869AB8946196 /* Pods_Tipsy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tipsy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,6 +182,8 @@
 		A511A0EB29900BD5008B83CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A580F62229923C9700F8E10E /* Result.swift */,
+				A580F62429923D0D00F8E10E /* TipsyController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -469,6 +475,8 @@
 				A511A0C029900BC5008B83CF /* ViewController.swift in Sources */,
 				A511A0F229900C8E008B83CF /* LabelsProperty.swift in Sources */,
 				A511A0BC29900BC5008B83CF /* AppDelegate.swift in Sources */,
+				A580F62329923C9700F8E10E /* Result.swift in Sources */,
+				A580F62529923D0D00F8E10E /* TipsyController.swift in Sources */,
 				A511A0BE29900BC5008B83CF /* SceneDelegate.swift in Sources */,
 				A511A0F429900F60008B83CF /* ResultViewController.swift in Sources */,
 			);

@@ -12,7 +12,7 @@ class ResultViewController: UIViewController {
 
     //MARK: - Variable
     
-    var percentage: Double?
+    var percentage: Int?
     var split: Int?
     var result: Double?
     
@@ -55,7 +55,7 @@ class ResultViewController: UIViewController {
     
     lazy var totalResultValueLabel: UILabel = {
         let label = UILabel(frame: labels.totalResultValueLabelFrame)
-        label.text = String(result ?? 0)
+        label.text = String(format: "%.2f", result ?? 0)
         label.textAlignment = .center
         label.font = labels.totalResultValueLabelFont
         label.textColor = labels.totalResultValueTextColor
@@ -118,8 +118,8 @@ class ResultViewController: UIViewController {
         }
         
         settingsTitleLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview()
-            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview().offset(-80)
+            make.leading.equalToSuperview().offset(80)
             make.centerY.equalToSuperview()
         }
         

@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     var buttons = ButtonsProperty()
     var labels = LabelProperty()
+    var controller = TipsyController()
     
     //MARK: - Views and StackViews
     
@@ -104,6 +105,7 @@ class ViewController: UIViewController {
         button.setTitleColor(buttons.percentButtonTextNotSelectedColor, for: .normal)
         button.titleLabel?.font = buttons.percentButtonFont
         button.titleLabel?.numberOfLines = 1
+        button.tag = 0
         button.addTarget(self, action: #selector(percentButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -115,6 +117,7 @@ class ViewController: UIViewController {
         button.setTitleColor(buttons.percentButtonTextNotSelectedColor, for: .normal)
         button.titleLabel?.font = buttons.percentButtonFont
         button.titleLabel?.numberOfLines = 1
+        button.tag = 10
         button.addTarget(self, action: #selector(percentButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -126,6 +129,7 @@ class ViewController: UIViewController {
         button.setTitleColor(buttons.percentButtonTextNotSelectedColor, for: .normal)
         button.titleLabel?.font = buttons.percentButtonFont
         button.titleLabel?.numberOfLines = 1
+        button.tag = 20
         button.addTarget(self, action: #selector(percentButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -277,7 +281,19 @@ class ViewController: UIViewController {
     //MARK: - Methods
 
     @objc func calcButtonTapped(_ sender: UIButton) {
-        goToResultVC()
+        let bill = Double(totalTextField.text!)
+        let split = Int(stepper.value)
+        var percentage = 0
+        let buttonsArray: [UIButton] = [zeroPercentButton, tenPercentButton, twentyPercentButton]
+        for button in buttonsArray {
+            if button.isSelected {
+                percentage = button.tag
+            }
+        }
+        let result = controller.calculateBill(parameter: Result(bill: bill ?? 0,
+                                                               split: split,
+                                                               percentage: percentage))
+        goToResultVC(result: result)
     }
     
     @objc func stepperChanged(_ sender: UIStepper) {
@@ -292,18 +308,24 @@ class ViewController: UIViewController {
             if sender == button {
                 sender.setTitleColor(buttons.percentButtonTextSelectedColor, for: .normal)
                 sender.backgroundColor = buttons.percentButtonSelectedColor
+                sender.isSelected = true
             } else {
                 button.setTitleColor(buttons.percentButtonTextNotSelectedColor, for: .normal)
                 button.backgroundColor = buttons.percentButtonNotSelectedColor
+                button.isSelected = false
             }
         }
         
+        
     }
     
-    func goToResultVC() {
+    func goToResultVC(result: Result) {
         let secondVC = ResultViewController()
         secondVC.modalPresentationStyle = .fullScreen
         dismiss(animated: true)
+        secondVC.result = result.bill
+        secondVC.percentage = result.percentage
+        secondVC.split = result.split
         self.present(secondVC, animated: true, completion: nil)
     }
     
