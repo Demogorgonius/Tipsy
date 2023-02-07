@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ResultViewController: UIViewController {
 
@@ -78,6 +79,7 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.addSubview(resultView)
         view.addSubview(settingsTitleLabel)
         view.addSubview(recalculateButton)
@@ -89,12 +91,53 @@ class ResultViewController: UIViewController {
 
     func setupConstraints() {
         
+        recalculateButton.snp.makeConstraints { make in
+            make.height.equalTo(54)
+            make.trailing.equalToSuperview().offset(-80)
+            make.leading.equalToSuperview().offset(80)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-20)
+        }
+        
+        totalResultLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.top.equalTo(resultView.snp.top).offset(80)
+        }
+        
+        resultView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.height.equalTo(300)
+        }
+        
+        totalResultValueLabel.snp.makeConstraints { make in
+            make.top.equalTo(totalResultLabel.snp.bottom).offset(40)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+        
+        settingsTitleLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+        
     }
     
     //MARK: - Methods
     
     @objc func recalcButtonTapped(_ sender: UIButton) {
         
+        goToFirstVC()
+        
+    }
+    
+    func goToFirstVC() {
+        let firstVC = ViewController()
+        firstVC.modalPresentationStyle = .fullScreen
+        dismiss(animated: true)
+        self.present(firstVC, animated: true, completion: nil)
     }
 
 }

@@ -197,6 +197,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         view.addSubview(totalStackView)
         view.addSubview(calculateView)
         setupConstraints()
@@ -276,7 +277,7 @@ class ViewController: UIViewController {
     //MARK: - Methods
 
     @objc func calcButtonTapped(_ sender: UIButton) {
-        
+        goToResultVC()
     }
     
     @objc func stepperChanged(_ sender: UIStepper) {
@@ -297,6 +298,13 @@ class ViewController: UIViewController {
             }
         }
         
+    }
+    
+    func goToResultVC() {
+        let secondVC = ResultViewController()
+        secondVC.modalPresentationStyle = .fullScreen
+        dismiss(animated: true)
+        self.present(secondVC, animated: true, completion: nil)
     }
     
 
